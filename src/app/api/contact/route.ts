@@ -23,6 +23,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate environment variables
+    if (!BOT_TOKEN || !CHAT_ID) {
+      console.error('Missing Telegram credentials');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
     // Format the message for Telegram
     const message = `
 🎓 New Inquiry from Blazing Chess Academy

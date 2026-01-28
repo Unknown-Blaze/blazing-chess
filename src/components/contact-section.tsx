@@ -143,14 +143,13 @@ export function ContactSection() {
 
         {/* Additional Info - Centered */}
         <div className="grid md:grid-cols-2 gap-8 mt-16 text-center">
-          <button
+          <Button
             onClick={() => setIsFormOpen(!isFormOpen)}
-            className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30 hover:border-amber-500/60 transition-all duration-300 hover:bg-amber-500/5"
+            className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black py-8 text-lg shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide rounded-2xl h-auto flex flex-col items-center justify-center gap-3"
           >
             <div className="text-4xl">📝</div>
-            <h4 className="text-white font-black text-lg">Fill a Form</h4>
-            <p className="text-gray-400">Quick inquiry form sent to us</p>
-          </button>
+            <span>Fill a Form</span>
+          </Button>
           <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30">
             <div className="text-4xl">⚡</div>
             <h4 className="text-white font-black text-lg">Quick Response</h4>

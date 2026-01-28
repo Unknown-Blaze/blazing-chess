@@ -76,13 +76,12 @@ export default function ProgramsPage() {
                         Flexible Rates
                       </div>
                     </div>
-                    <RegistrationModal
-                      trigger={
-                        <Button className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide">
-                          Start Trial
-                        </Button>
-                      }
-                    />
+                    <Button 
+                      onClick={() => window.location.href = '/contact'}
+                      className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide"
+                    >
+                      Start Trial
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
