@@ -29,22 +29,6 @@ export const COLORS = {
 // Offerings for landing page
 export const OFFERINGS: OfferingCard[] = [
   {
-    id: '1',
-    title: 'School CCA Coaching',
-    description: 'Comprehensive chess training programs tailored for school Co-Curricular Activities. Build your school\'s chess champions with expert guidance.',
-    icon: '🏫',
-    type: CourseType.SCHOOL_CCA,
-    features: [
-      'Structured curriculum aligned with school schedules',
-      'Group sessions for 8-15 students',
-      'MoE Certified coaches',
-      'Tournament preparation',
-      'Free trial class available',
-      'Available weekdays & weekends',
-    ],
-    price: 'From S$25/student/month',
-  },
-  {
     id: '2',
     title: 'Online One-on-One Classes',
     description: 'Personalized online coaching with flexible scheduling. Learn from young, passionate coaches dedicated to your progress.',
@@ -53,7 +37,7 @@ export const OFFERINGS: OfferingCard[] = [
     features: [
       'Choose your preferred coach',
       'Personalized learning plan',
-      'MoE Certified coaches (ages 20-26)',
+      'MoE Certified young adult coaches',
       'Flexible scheduling (weekdays & weekends)',
       'Free trial class included',
       'All ages welcome',
@@ -69,12 +53,28 @@ export const OFFERINGS: OfferingCard[] = [
     features: [
       'One-on-one or small group sessions',
       'Direct feedback from coaches',
-      'MoE Certified coaches (ages 20-26)',
+      'MoE Certified young adult coaches',
       'Free trial class included',
       'Weekdays & weekends available',
       'All ages welcome',
     ],
     price: 'From S$60/hour',
+  },
+  {
+    id: '1',
+    title: 'School CCA Coaching',
+    description: 'Comprehensive chess training programs tailored for school Co-Curricular Activities. Build your school\'s chess champions with expert guidance.',
+    icon: '🏫',
+    type: CourseType.SCHOOL_CCA,
+    features: [
+      'Structured curriculum aligned with school schedules',
+      'Group sessions for 8-15 students',
+      'MoE Certified coaches',
+      'Tournament preparation',
+      'Free trial class available',
+      'Available weekdays & weekends',
+    ],
+    price: 'From S$25/student/month',
   },
 ];
 

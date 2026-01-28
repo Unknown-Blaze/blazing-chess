@@ -82,15 +82,7 @@ export default function HomePage() {
           </div>
 
           {/* Floating Stats - Mobile Optimized */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 mt-12 sm:mt-16 md:mt-20 max-w-2xl mx-auto px-2">
-            <div className="group space-y-1 sm:space-y-2">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-black text-amber-400 group-hover:scale-110 transition-transform duration-300">
-                20-26
-              </div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-400 font-semibold uppercase tracking-wide leading-tight">
-                Coach Age
-              </div>
-            </div>
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 mt-12 sm:mt-16 md:mt-20 max-w-xl mx-auto px-2">
             <div className="group space-y-1 sm:space-y-2">
               <div className="text-3xl sm:text-4xl md:text-5xl font-black text-orange-500 group-hover:scale-110 transition-transform duration-300">
                 4-80
@@ -110,16 +102,11 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg className="w-7 h-7 text-amber-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" stroke="currentColor">
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
+        {/* Scroll Indicator - Hidden */}
       </section>
 
       {/* About Section - Mobile Optimized */}
-      <section className="py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-950 to-black">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-950 to-black">
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black">
@@ -136,7 +123,7 @@ export default function HomePage() {
             <div className="bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl p-6 sm:p-8 md:p-10 border border-amber-500/20 backdrop-blur-sm hover:border-amber-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
               <h3 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-3 sm:mb-4">Strategic Excellence</h3>
               <p>
-                We believe chess is more than a game—it&apos;s a powerful tool for developing critical thinking, strategic planning, and resilience. Our coaches, aged 20-26, bring fresh perspectives and energy to every lesson, making learning engaging and effective for students of all ages.
+                We believe chess is more than a game—it&apos;s a powerful tool for developing critical thinking, strategic planning, and resilience. Our young adult coaches bring fresh perspectives and energy to every lesson, making learning engaging and effective for students of all ages.
               </p>
             </div>
 
@@ -158,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* Programs Section - Mobile Optimized */}
-      <section id="offerings" className="py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-black relative">
+      <section id="offerings" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-black relative">
         <div className="absolute inset-0 opacity-3 pointer-events-none">
           <div className="absolute top-20 right-10 w-96 h-96 bg-amber-500 rounded-full filter blur-3xl" />
           <div className="absolute bottom-0 left-10 w-80 h-80 bg-orange-600 rounded-full filter blur-3xl" />
@@ -235,7 +222,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Mobile Optimized */}
-      <section className="py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-950 to-black">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-950 to-black">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black">
             Ready to <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Ignite</span> Your Potential?
@@ -254,12 +241,12 @@ export default function HomePage() {
       </section>
 
       {/* Coaches Section */}
-      <section id="coaches" className="py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <section id="coaches" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-black">
         <CoachesFeatures />
       </section>
 
       {/* Gallery/Images Section - Mobile Optimized */}
-      <section className="py-20 sm:py-28 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-950 to-black">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-950 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20 space-y-4 sm:space-y-6">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black">
@@ -348,7 +335,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 via-black to-black">
+      <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-950 via-black to-black">
         <ContactSection />
       </section>
     </main>
