@@ -22,7 +22,6 @@ interface FormData {
 
 export function ContactSection() {
   const [activeChannel, setActiveChannel] = useState<ContactChannel>('whatsapp');
-  const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [formData, setFormData] = useState<FormData>({
@@ -143,13 +142,11 @@ export function ContactSection() {
 
         {/* Additional Info - Centered */}
         <div className="grid md:grid-cols-2 gap-8 mt-16 text-center">
-          <Button
-            onClick={() => setIsFormOpen(!isFormOpen)}
-            className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black py-8 text-lg shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide rounded-2xl h-auto flex flex-col items-center justify-center gap-3"
-          >
+          <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30 bg-amber-500/5">
             <div className="text-4xl">📝</div>
-            <span>Fill a Form</span>
-          </Button>
+            <h4 className="text-white font-black text-lg">Fill the Form Below</h4>
+            <p className="text-gray-400">Quick inquiry form sent to us</p>
+          </div>
           <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30">
             <div className="text-4xl">⚡</div>
             <h4 className="text-white font-black text-lg">Quick Response</h4>
@@ -157,9 +154,8 @@ export function ContactSection() {
           </div>
         </div>
 
-        {/* Contact Form - Hidden by default */}
-        {isFormOpen && (
-          <div className="mt-16 bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl p-8 border border-amber-500/20">
+        {/* Contact Form - Always Visible */}
+        <div className="mt-16 bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl p-8 border border-amber-500/20">
             <div className="mb-8">
               <h3 className="text-2xl font-black text-white mb-2">Tell us about yourself</h3>
               <p className="text-gray-400">Fill in the details and we&apos;ll get back to you shortly</p>
@@ -189,7 +185,6 @@ export function ContactSection() {
                       elo: '',
                       ageGroup: '',
                     });
-                    setTimeout(() => setIsFormOpen(false), 2000);
                   } else {
                     setSubmitMessage('Error submitting form. Please try again.');
                   }
@@ -288,17 +283,8 @@ export function ContactSection() {
               >
                 {isSubmitting ? 'Sending...' : 'Send Inquiry'}
               </Button>
-
-              <button
-                type="button"
-                onClick={() => setIsFormOpen(false)}
-                className="w-full text-gray-400 hover:text-gray-300 py-2 text-sm transition-colors"
-              >
-                Close
-              </button>
             </form>
           </div>
-        )}
       </div>
     </div>
   );

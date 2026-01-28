@@ -42,7 +42,7 @@ export const OFFERINGS: OfferingCard[] = [
       'Free trial class included',
       'All ages welcome',
     ],
-    price: 'From S$50/hour',
+    price: 'S$50/hour (1-on-1) • Group rates available',
   },
   {
     id: '3',
@@ -58,7 +58,7 @@ export const OFFERINGS: OfferingCard[] = [
       'Weekdays & weekends available',
       'All ages welcome',
     ],
-    price: 'From S$60/hour',
+    price: 'S$60/hour (1-on-1) • Group rates available',
   },
   {
     id: '1',
@@ -74,7 +74,7 @@ export const OFFERINGS: OfferingCard[] = [
       'Free trial class available',
       'Available weekdays & weekends',
     ],
-    price: 'From S$25/student/month',
+    price: 'S$25/student/month (Group pricing)',
   },
 ];
 

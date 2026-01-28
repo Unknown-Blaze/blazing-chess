@@ -74,7 +74,7 @@ export default function HomePage() {
               variant="outline"
               className="w-full sm:w-auto border-2 border-amber-500 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300 transition-all duration-300 text-sm sm:text-base font-bold py-5 sm:py-6 px-6 sm:px-8"
               onClick={() => {
-                document.getElementById('offerings')?.scrollIntoView({ behavior: 'smooth' });
+                window.location.href = '/programs';
               }}
             >
               View Programs
