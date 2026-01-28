@@ -2,7 +2,7 @@
 
 /**
  * Blazing Chess Academy - Contact Section Component
- * Multi-channel contact with tabs
+ * Multi-channel contact with form
  */
 
 import { useState } from 'react';
@@ -12,8 +12,26 @@ import { cn } from '@/lib/utils';
 
 type ContactChannel = 'whatsapp' | 'telegram';
 
+interface FormData {
+  studentName: string;
+  contactNumber: string;
+  contactRepresentative: string;
+  elo: string;
+  ageGroup: string;
+}
+
 export function ContactSection() {
   const [activeChannel, setActiveChannel] = useState<ContactChannel>('whatsapp');
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [formData, setFormData] = useState<FormData>({
+    studentName: '',
+    contactNumber: '',
+    contactRepresentative: '',
+    elo: '',
+    ageGroup: '',
+  });
 
   const channels = [
     {
@@ -124,23 +142,164 @@ export function ContactSection() {
         </div>
 
         {/* Additional Info - Centered */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16 text-center">
-          <div className="space-y-3">
-            <div className="text-4xl">✓</div>
+        <div className="grid md:grid-cols-2 gap-8 mt-16 text-center">
+          <button
+            onClick={() => setIsFormOpen(!isFormOpen)}
+            className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30 hover:border-amber-500/60 transition-all duration-300 hover:bg-amber-500/5"
+          >
+            <div className="text-4xl">📝</div>
+            <h4 className="text-white font-black text-lg">Fill a Form</h4>
+            <p className="text-gray-400">Quick inquiry form sent to us</p>
+          </button>
+          <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30">
+            <div className="text-4xl">⚡</div>
             <h4 className="text-white font-black text-lg">Quick Response</h4>
             <p className="text-gray-400">We reply within 24 hours</p>
           </div>
-          <div className="space-y-3">
-            <div className="text-4xl">🎓</div>
-            <h4 className="text-white font-black text-lg">Trial Class</h4>
-            <p className="text-gray-400">Free trial to find your ideal coach</p>
-          </div>
-          <div className="space-y-3">
-            <div className="text-4xl">📅</div>
-            <h4 className="text-white font-black text-lg">Flexible Times</h4>
-            <p className="text-gray-400">Classes at your convenience</p>
-          </div>
         </div>
+
+        {/* Contact Form - Hidden by default */}
+        {isFormOpen && (
+          <div className="mt-16 bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl p-8 border border-amber-500/20">
+            <div className="mb-8">
+              <h3 className="text-2xl font-black text-white mb-2">Tell us about yourself</h3>
+              <p className="text-gray-400">Fill in the details and we&apos;ll get back to you shortly</p>
+            </div>
+
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setIsSubmitting(true);
+                setSubmitMessage('');
+
+                try {
+                  const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                  });
+
+                  const result = await response.json();
+
+                  if (response.ok) {
+                    setSubmitMessage('✓ Thank you! We&apos;ll contact you soon.');
+                    setFormData({
+                      studentName: '',
+                      contactNumber: '',
+                      contactRepresentative: '',
+                      elo: '',
+                      ageGroup: '',
+                    });
+                    setTimeout(() => setIsFormOpen(false), 2000);
+                  } else {
+                    setSubmitMessage('Error submitting form. Please try again.');
+                  }
+                } catch (error) {
+                  setSubmitMessage('Error submitting form. Please try again.');
+                } finally {
+                  setIsSubmitting(false);
+                }
+              }}
+              className="space-y-6"
+            >
+              {/* Student Name */}
+              <div>
+                <label className="block text-sm font-bold text-amber-400 mb-2">Student Name *</label>
+                <input
+                  type="text"
+                  required
+                  value={formData.studentName}
+                  onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
+                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  placeholder="Enter student&apos;s name"
+                />
+              </div>
+
+              {/* Contact Number */}
+              <div>
+                <label className="block text-sm font-bold text-amber-400 mb-2">Contact Number *</label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.contactNumber}
+                  onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
+                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  placeholder="+65 XXXX XXXX"
+                />
+              </div>
+
+              {/* Contact Representative */}
+              <div>
+                <label className="block text-sm font-bold text-amber-400 mb-2">Contact Representative (Parent/Guardian) *</label>
+                <input
+                  type="text"
+                  required
+                  value={formData.contactRepresentative}
+                  onChange={(e) => setFormData({ ...formData, contactRepresentative: e.target.value })}
+                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  placeholder="Parent/Guardian name"
+                />
+              </div>
+
+              {/* Age Group */}
+              <div>
+                <label className="block text-sm font-bold text-amber-400 mb-2">Age Group *</label>
+                <select
+                  required
+                  value={formData.ageGroup}
+                  onChange={(e) => setFormData({ ...formData, ageGroup: e.target.value })}
+                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-amber-500"
+                >
+                  <option value="">Select age group</option>
+                  <option value="4-8">4-8 years</option>
+                  <option value="9-12">9-12 years</option>
+                  <option value="13-18">13-18 years</option>
+                  <option value="18+">18+ years</option>
+                </select>
+              </div>
+
+              {/* Current ELO */}
+              <div>
+                <label className="block text-sm font-bold text-amber-400 mb-2">Current ELO (Online)</label>
+                <input
+                  type="text"
+                  value={formData.elo}
+                  onChange={(e) => setFormData({ ...formData, elo: e.target.value })}
+                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  placeholder="e.g., 1200 (optional)"
+                />
+              </div>
+
+              {/* Submit Message */}
+              {submitMessage && (
+                <div className={`p-4 rounded-lg text-center font-bold ${
+                  submitMessage.includes('✓') 
+                    ? 'bg-green-500/20 text-green-300' 
+                    : 'bg-red-500/20 text-red-300'
+                }`}>
+                  {submitMessage}
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black py-3 text-lg shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide rounded-xl disabled:opacity-50"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Inquiry'}
+              </Button>
+
+              <button
+                type="button"
+                onClick={() => setIsFormOpen(false)}
+                className="w-full text-gray-400 hover:text-gray-300 py-2 text-sm transition-colors"
+              >
+                Close
+              </button>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );
