@@ -43,7 +43,26 @@ export function Navbar() {
               href="/"
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
-              <span className="text-3xl group-hover:scale-110 transition-transform duration-300">♚</span>
+              <div className="w-10 h-10 group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-full h-full">
+                  <defs>
+                    <linearGradient id="flameGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: '#FCD34D', stopOpacity: 1 }} />
+                      <stop offset="50%" style={{ stopColor: '#F59E0B', stopOpacity: 1 }} />
+                      <stop offset="100%" style={{ stopColor: '#DC2626', stopOpacity: 1 }} />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="48" fill="#000000" stroke="url(#flameGradient)" strokeWidth="3"/>
+                  <g transform="translate(50, 50)">
+                    <rect x="-2" y="-28" width="4" height="10" fill="url(#flameGradient)"/>
+                    <rect x="-6" y="-24" width="12" height="4" fill="url(#flameGradient)"/>
+                    <circle cx="0" cy="-12" r="6" fill="url(#flameGradient)"/>
+                    <path d="M -8,-8 L -10,15 L 10,15 L 8,-8 Z" fill="url(#flameGradient)"/>
+                    <rect x="-12" y="15" width="24" height="6" fill="url(#flameGradient)"/>
+                    <path d="M -14,21 L -12,25 L 12,25 L 14,21 Z" fill="url(#flameGradient)"/>
+                  </g>
+                </svg>
+              </div>
               <div className="text-left">
                 <div className="text-lg font-black text-white tracking-tight leading-none">
                   {BRAND.name}
