@@ -86,7 +86,7 @@ export function CoachesFeatures() {
             <div className="text-center">
               <div className="text-6xl mb-4">⚡</div>
               <h4 className="text-white font-bold mb-2">Energetic & Patient</h4>
-              <p className="text-gray-400 text-sm">Patient instructors who adapt their teaching to each student\'s pace and learning style</p>
+              <p className="text-gray-400 text-sm">Patient instructors who adapt their teaching to each student&apos;s pace and learning style</p>
             </div>
             <div className="text-center">
               <div className="text-6xl mb-4">🎓</div>

@@ -136,21 +136,21 @@ export default function HomePage() {
             <div className="bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl p-6 sm:p-8 md:p-10 border border-amber-500/20 backdrop-blur-sm hover:border-amber-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
               <h3 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-3 sm:mb-4">Strategic Excellence</h3>
               <p>
-                We believe chess is more than a game—it's a powerful tool for developing critical thinking, strategic planning, and resilience. Our coaches, aged 20-26, bring fresh perspectives and energy to every lesson, making learning engaging and effective for students of all ages.
+                We believe chess is more than a game—it&apos;s a powerful tool for developing critical thinking, strategic planning, and resilience. Our coaches, aged 20-26, bring fresh perspectives and energy to every lesson, making learning engaging and effective for students of all ages.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-orange-900/20 to-amber-900/20 rounded-2xl p-6 sm:p-8 md:p-10 border border-orange-500/20 backdrop-blur-sm hover:border-orange-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10">
               <h3 className="text-2xl sm:text-3xl font-bold text-orange-400 mb-3 sm:mb-4">Your Choice, Your Coach</h3>
               <p>
-                Every student learns differently. That's why we empower you to select the coach who best matches your learning style and goals. All our coaches are MoE certified professionals committed to your success, with expertise spanning beginner to advanced levels.
+                Every student learns differently. That&apos;s why we empower you to select the coach who best matches your learning style and goals. All our coaches are MoE certified professionals committed to your success, with expertise spanning beginner to advanced levels.
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-amber-900/20 to-gray-900/20 rounded-2xl p-6 sm:p-8 md:p-10 border border-amber-500/20 backdrop-blur-sm hover:border-amber-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
               <h3 className="text-2xl sm:text-3xl font-bold text-amber-300 mb-3 sm:mb-4">Accessible to Everyone</h3>
               <p>
-                Whether you're 4 years old taking your first steps on the board or 80 years old rediscovering the game, chess is for everyone. We offer flexible scheduling across weekdays and weekends, with options for school groups, one-on-one online coaching, and face-to-face instruction tailored to your preferences.
+                Whether you&apos;re 4 years old taking your first steps on the board or 80 years old rediscovering the game, chess is for everyone. We offer flexible scheduling across weekdays and weekends, with options for school groups, one-on-one online coaching, and face-to-face instruction tailored to your preferences.
               </p>
             </div>
           </div>
