@@ -15,6 +15,7 @@ const navItems = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Navigation Items - Absolutely Centered */}
+          {/* Navigation Items - Absolutely Centered (Desktop) */}
           <div className="hidden md:flex items-center gap-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {navItems.map((item) => (
               <Link
@@ -76,6 +77,28 @@ export function Navbar() {
             ))}
           </div>
 
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-amber-500/20 md:hidden z-40">
+              <div className="px-4 py-4 space-y-3">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-4 py-2 rounded-lg font-bold transition-all duration-300 uppercase tracking-wide ${
+                      pathname === item.href
+                        ? 'bg-amber-500 text-black'
+                        : 'text-gray-300 hover:bg-amber-500/10 hover:text-amber-400'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* CTA Button - Right Aligned */}
           <div className="flex items-center gap-4">
             <Link href="/programs">
@@ -87,11 +110,20 @@ export function Navbar() {
               </Button>
             </Link>
 
-            {/* Mobile menu button - placeholder */}
-            <button className="md:hidden p-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 transition-colors text-amber-400">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 transition-colors text-amber-400"
+            >
+              {isMobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
