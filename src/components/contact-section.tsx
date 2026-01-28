@@ -99,9 +99,9 @@ export function ContactSection() {
               <div className="bg-black/60 rounded-2xl p-8 border border-amber-500/30 backdrop-blur-sm">
                 <div className="text-center space-y-4">
                   <div className="text-7xl">{activeChannelData.icon}</div>
-                  <h3 className="text-3xl font-black text-white">{activeChannelData.label}</h3>
-                  <p className="text-amber-400 text-base font-bold uppercase tracking-wide">{activeChannelData.description}</p>
-                  <p className="text-3xl font-black text-amber-300 font-mono tracking-wider">
+                  <h3 className="text-2xl sm:text-3xl font-black text-white">{activeChannelData.label}</h3>
+                  <p className="text-amber-400 text-sm sm:text-base font-bold uppercase tracking-wide">{activeChannelData.description}</p>
+                  <p className="text-xl sm:text-3xl font-black text-amber-300 font-mono overflow-x-auto break-words">
                     {activeChannelData.value}
                   </p>
                 </div>
@@ -133,7 +133,7 @@ export function ContactSection() {
               {/* Action Button */}
               <Button
                 onClick={() => window.open(activeChannelData.action, '_blank')}
-                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black py-7 text-lg shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide rounded-xl"
+                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black py-6 sm:py-7 text-sm sm:text-lg shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide rounded-xl"
               >
                 Contact us on {activeChannelData.label}
               </Button>
