@@ -39,8 +39,8 @@ export function ContactSection() {
   const activeChannelData = channels.find((c) => c.id === activeChannel);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-950 to-black">
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-black">
             Get in{' '}
@@ -142,6 +142,6 @@ export function ContactSection() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,44 +1,30 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { BRAND } from '@/lib/constants';
 
 const navItems = [
-  { label: 'Programs', href: '#offerings' },
-  { label: 'Coaches', href: '#coaches' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Coaches', href: '/coaches' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
-      // Update active section
-      const sections = document.querySelectorAll('section[id]');
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 200) {
-          setActiveSection(section.id);
-        }
-      });
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToSection = (href: string) => {
-    const id = href.replace('#', '');
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <nav
@@ -49,11 +35,11 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 group">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            <Link
+              href="/"
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
               <span className="text-3xl group-hover:scale-110 transition-transform duration-300">♚</span>
@@ -65,17 +51,17 @@ export function Navbar() {
                   {BRAND.tagline}
                 </div>
               </div>
-            </button>
+            </Link>
           </div>
 
-          {/* Navigation Items - Centered */}
-          <div className="hidden md:flex items-center gap-2">
+          {/* Navigation Items - Absolutely Centered */}
+          <div className="hidden md:flex items-center gap-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {navItems.map((item) => (
-              <button
+              <Link
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
                 className={`px-5 py-2 text-sm font-bold transition-all duration-300 relative group uppercase tracking-wide ${
-                  activeSection === item.href.replace('#', '')
+                  pathname === item.href
                     ? 'text-amber-400'
                     : 'text-gray-300 hover:text-amber-400'
                 }`}
@@ -83,22 +69,23 @@ export function Navbar() {
                 {item.label}
                 <span
                   className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-amber-500 to-orange-600 transition-all duration-300 ${
-                    activeSection === item.href.replace('#', '') ? 'w-full' : 'w-0 group-hover:w-full'
+                    pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
-              </button>
+              </Link>
             ))}
           </div>
 
           {/* CTA Button - Right Aligned */}
           <div className="flex items-center gap-4">
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-bold shadow-lg hover:shadow-amber-500/50 transition-all duration-300 hidden sm:inline-flex uppercase tracking-wide text-xs"
-              onClick={() => scrollToSection('#offerings')}
-            >
-              Get Started
-            </Button>
+            <Link href="/programs">
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-bold shadow-lg hover:shadow-amber-500/50 transition-all duration-300 hidden sm:inline-flex uppercase tracking-wide text-xs"
+              >
+                Get Started
+              </Button>
+            </Link>
 
             {/* Mobile menu button - placeholder */}
             <button className="md:hidden p-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 transition-colors text-amber-400">

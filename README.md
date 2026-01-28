@@ -1,4 +1,4 @@
-# Blazing Chess Academy 🔥♟️
+# Blazing Chess Academy 🔥♟️ 
 
 **Ignite Your Potential**
 
