@@ -6,7 +6,7 @@ import { ContactSection } from '@/components/contact-section';
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-amber-50 text-gray-900">
+    <main className="min-h-screen bg-amber-50 text-gray-900 page-fade">
       <Navbar />
 
       {/* Contact Section */}

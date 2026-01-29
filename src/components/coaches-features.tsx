@@ -36,12 +36,16 @@ export function CoachesFeatures() {
   ];
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-amber-50 relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: "url('/boards_with_children_hands_owis.jpg')" }}
+      />
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-amber-200 shadow-lg shadow-amber-200/30">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Why Choose{' '}
-            <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">
               Our Coaches
             </span>
           </h2>
@@ -59,7 +63,7 @@ export function CoachesFeatures() {
               <CardHeader>
                 <div className="text-5xl mb-4">{feature.icon}</div>
                 <CardTitle className="text-2xl text-gray-900">{feature.title}</CardTitle>
-                <CardDescription className="text-amber-700 font-semibold text-sm mt-2">
+                <CardDescription className="text-amber-800 font-semibold text-sm mt-2">
                   {feature.highlight}
                 </CardDescription>
               </CardHeader>
@@ -99,19 +103,19 @@ export function CoachesFeatures() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
           <div className="text-center p-6 bg-white rounded-lg border border-amber-200 shadow-sm">
-            <div className="text-3xl font-bold text-amber-700 mb-2">20-26</div>
+            <div className="text-3xl font-bold text-amber-800 mb-2">20-26</div>
             <div className="text-sm text-gray-700">Coach Age Range</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg border border-amber-200 shadow-sm">
-            <div className="text-3xl font-bold text-amber-700 mb-2">4-80</div>
+            <div className="text-3xl font-bold text-amber-800 mb-2">4-80</div>
             <div className="text-sm text-gray-700">Student Age Range</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg border border-amber-200 shadow-sm">
-            <div className="text-3xl font-bold text-amber-700 mb-2">100%</div>
+            <div className="text-3xl font-bold text-amber-800 mb-2">100%</div>
             <div className="text-sm text-gray-700">MoE Certified</div>
           </div>
           <div className="text-center p-6 bg-white rounded-lg border border-amber-200 shadow-sm">
-            <div className="text-3xl font-bold text-amber-700 mb-2">Free</div>
+            <div className="text-3xl font-bold text-amber-800 mb-2">Free</div>
             <div className="text-sm text-gray-700">Trial Class</div>
           </div>
         </div>

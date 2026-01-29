@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Navbar } from '@/components/navbar';
-import { RegistrationModal } from '@/components/registration-modal';
 import { OFFERINGS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import {
@@ -15,7 +14,7 @@ import {
 
 export default function ProgramsPage() {
   return (
-    <main className="min-h-screen bg-amber-50 text-gray-900">
+    <main className="min-h-screen bg-amber-50 text-gray-900 page-fade">
       <Navbar />
 
       {/* Programs Section - Mobile Optimized */}
@@ -25,9 +24,9 @@ export default function ProgramsPage() {
           style={{ backgroundImage: "url('/cool_chess_board.jpg')" }}
         />
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-10 border border-amber-200 shadow-lg shadow-amber-200/30">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-4 sm:mb-6">
-              Our <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Programs</span>
+              Our <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Programs</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light px-2">
               Choose the program that fits your journey in Singapore. From school groups to personalized coaching, we have the perfect fit.
@@ -41,7 +40,7 @@ export default function ProgramsPage() {
                 className="bg-white border-amber-200 hover:border-amber-300 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-200/40 hover:-translate-y-3 group flex flex-col h-full"
               >
                 <CardHeader className="space-y-3 sm:space-y-4">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
                     {offering.icon}
                   </div>
                   <div>
@@ -59,7 +58,7 @@ export default function ProgramsPage() {
                     {offering.features.map((feature, featureIdx) => (
                       <li key={featureIdx} className="flex items-start gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base leading-relaxed group/item">
                         <svg
-                          className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 flex-shrink-0 mt-0.5 group-hover/item:scale-125 transition-transform duration-300"
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 flex-shrink-0 mt-0.5 group-hover/item:scale-125 transition-transform duration-300"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -71,8 +70,8 @@ export default function ProgramsPage() {
                   </ul>
 
                   <div className="space-y-4 pt-4 border-t border-amber-200">
-                    <div className="bg-gradient-to-r from-amber-100/70 to-orange-100/70 rounded-xl p-4 border border-amber-200">
-                      <div className="text-amber-700 font-black text-xl sm:text-2xl">
+                    <div className="bg-gradient-to-r from-amber-200/70 to-orange-200/70 rounded-xl p-4 border border-amber-200">
+                      <div className="text-amber-800 font-black text-xl sm:text-2xl">
                         {offering.price}
                       </div>
                       <div className="text-gray-600 text-xs font-semibold mt-1 uppercase tracking-wide">
@@ -81,7 +80,7 @@ export default function ProgramsPage() {
                     </div>
                     <Button 
                       onClick={() => window.location.href = '/contact'}
-                      className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide"
+                      className="w-full bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-black font-black text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide"
                     >
                       Start Trial
                     </Button>
@@ -94,18 +93,17 @@ export default function ProgramsPage() {
           {/* CTA Section */}
           <div className="mt-16 sm:mt-20 md:mt-24 text-center space-y-6 sm:space-y-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black">
-              Ready to <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Start</span>?
+              Ready to <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Start</span>?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-light px-2 max-w-2xl mx-auto">
               Start with a free trial class. No pressure, no commitment, just pure chess mastery.
             </p>
-            <RegistrationModal
-              trigger={
-                <Button className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-8 shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide">
-                  Book Your Trial
-                </Button>
-              }
-            />
+            <Button
+              className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-black font-black text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-8 shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide"
+              onClick={() => window.location.href = '/contact'}
+            >
+              Book Your Trial
+            </Button>
           </div>
         </div>
       </section>

@@ -61,7 +61,7 @@ export function ContactSection() {
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-black">
             Get in{' '}
-            <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
@@ -81,7 +81,7 @@ export function ContactSection() {
                 className={cn(
                   'px-8 py-4 rounded-xl font-bold transition-all duration-300 text-base uppercase tracking-wide flex items-center justify-center gap-2',
                   activeChannel === channel.id
-                    ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-black shadow-lg shadow-amber-500/50 scale-105'
+                    ? 'bg-gradient-to-r from-amber-600 to-orange-700 text-black shadow-lg shadow-amber-500/50 scale-105'
                     : 'bg-amber-50 text-gray-700 hover:bg-amber-100 border border-amber-200 hover:border-amber-300'
                 )}
               >
@@ -132,7 +132,7 @@ export function ContactSection() {
               {/* Action Button */}
               <Button
                 onClick={() => window.open(activeChannelData.action, '_blank')}
-                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black py-6 sm:py-7 text-sm sm:text-lg shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide rounded-xl"
+                className="w-full bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-black font-black py-6 sm:py-7 text-sm sm:text-lg shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide rounded-xl"
               >
                 Contact us on {activeChannelData.label}
               </Button>
