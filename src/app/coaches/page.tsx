@@ -92,11 +92,14 @@ export default function CoachesPage() {
           {/* CTA */}
           <div className="text-center mt-12 sm:mt-16">
             <p className="text-gray-400 text-base sm:text-lg mb-6 px-2">
-              Want to see more? Follow us on social media for daily updates and coaching tips
+              Ready to start your chess journey?
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center px-2">
-              <button className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-bold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base uppercase tracking-wide w-full sm:w-auto rounded-lg transition-all duration-300">
-                Follow Instagram
+              <button 
+                onClick={() => window.location.href = '/contact'}
+                className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-bold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base uppercase tracking-wide w-full sm:w-auto rounded-lg transition-all duration-300"
+              >
+                Book Your Free Trial
               </button>
             </div>
           </div>

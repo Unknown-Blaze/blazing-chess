@@ -177,7 +177,14 @@ export function ContactSection() {
                   const result = await response.json();
 
                   if (response.ok) {
-                    setSubmitMessage('✓ Thank you! We&apos;ll contact you soon.');
+                    const now = new Date();
+                    // Convert to GMT+8 (Singapore time)
+                    const gmt8Time = new Date(now.getTime() + (8 * 60 - now.getTimezoneOffset()) * 60000);
+                    const dateStr = gmt8Time.toLocaleDateString('en-GB');
+                    const timeStr = gmt8Time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+                    const timestamp = `${dateStr} ${timeStr} GMT+8`;
+                    
+                    setSubmitMessage(`✓ Thank you! We'll contact you soon. (Submitted: ${timestamp})`);
                     setFormData({
                       studentName: '',
                       contactNumber: '',
