@@ -40,7 +40,7 @@ export default function ProgramsPage() {
                 className="bg-white border-amber-200 hover:border-amber-300 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-200/40 hover:-translate-y-3 group flex flex-col h-full"
               >
                 <CardHeader className="space-y-3 sm:space-y-4">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
                     {offering.icon}
                   </div>
                   <div>
@@ -80,7 +80,7 @@ export default function ProgramsPage() {
                     </div>
                     <Button 
                       onClick={() => window.location.href = '/contact'}
-                      className="w-full bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-black font-black text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide"
+                      className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-black text-sm sm:text-base py-5 sm:py-6 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide"
                     >
                       Start Trial
                     </Button>
@@ -88,22 +88,6 @@ export default function ProgramsPage() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-16 sm:mt-20 md:mt-24 text-center space-y-6 sm:space-y-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black">
-              Ready to <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Start</span>?
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-light px-2 max-w-2xl mx-auto">
-              Start with a free trial class. No pressure, no commitment, just pure chess mastery.
-            </p>
-            <Button
-              className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-black font-black text-base sm:text-lg px-8 sm:px-10 py-6 sm:py-8 shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 uppercase tracking-wide"
-              onClick={() => window.location.href = '/contact'}
-            >
-              Book Your Trial
-            </Button>
           </div>
         </div>
       </section>

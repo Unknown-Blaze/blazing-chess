@@ -47,7 +47,7 @@ export default function HomePage() {
           <div className="space-y-4 sm:space-y-6">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-tight tracking-tighter px-2">
               <span className="block mb-2 sm:mb-3 text-gray-900">Master</span>
-              <span className="block bg-gradient-to-r from-amber-400 via-orange-600 to-red-700 bg-clip-text text-transparent animate-pulse">
+              <span className="block bg-gradient-to-r from-amber-400 via-orange-500 to-orange-600 bg-clip-text text-transparent animate-pulse">
                 The Game
               </span>
             </h1>
@@ -63,7 +63,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 sm:pt-6 px-2">
             <Button
               size="lg"
-              className="w-full sm:w-auto bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-black font-bold py-5 sm:py-6 px-6 sm:px-8 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 text-sm sm:text-base"
+              className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-bold py-5 sm:py-6 px-6 sm:px-8 shadow-lg hover:shadow-amber-500/50 transition-all duration-300 text-sm sm:text-base"
               onClick={() => {
                 window.location.href = '/contact';
               }}

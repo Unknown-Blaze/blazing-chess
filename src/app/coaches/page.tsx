@@ -74,7 +74,7 @@ export default function CoachesPage() {
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center px-2">
               <button 
                 onClick={() => window.location.href = '/contact'}
-                className="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-black font-bold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base uppercase tracking-wide w-full sm:w-auto rounded-lg transition-all duration-300"
+                className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-black font-bold px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base uppercase tracking-wide w-full sm:w-auto rounded-lg transition-all duration-300"
               >
                 Book Your Free Trial
               </button>
