@@ -65,13 +65,13 @@ export function ContactSection() {
               Touch
             </span>
           </h2>
-          <p className="text-gray-400 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto font-light">
-            Reach out through WhatsApp or Telegram for inquiries, trial classes, and coaching guidance
+          <p className="text-gray-700 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto font-light">
+            Based in Singapore. Reach out through WhatsApp or Telegram for inquiries, trial classes, and coaching guidance.
           </p>
         </div>
 
         {/* Contact Tabs */}
-        <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-3xl p-8 sm:p-12 border border-amber-500/20 hover:border-amber-500/30 transition-all duration-300">
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-amber-200 hover:border-amber-300 transition-all duration-300 shadow-lg shadow-amber-100/60">
           {/* Channel Buttons - Centered */}
           <div className="flex flex-col sm:flex-row gap-4 mb-10 justify-center">
             {channels.map((channel) => (
@@ -82,7 +82,7 @@ export function ContactSection() {
                   'px-8 py-4 rounded-xl font-bold transition-all duration-300 text-base uppercase tracking-wide flex items-center justify-center gap-2',
                   activeChannel === channel.id
                     ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-black shadow-lg shadow-amber-500/50 scale-105'
-                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700 hover:border-amber-500/50'
+                    : 'bg-amber-50 text-gray-700 hover:bg-amber-100 border border-amber-200 hover:border-amber-300'
                 )}
               >
                 <span className="text-2xl">{channel.icon}</span>
@@ -95,20 +95,20 @@ export function ContactSection() {
           {activeChannelData && (
             <div className="space-y-8">
               {/* Contact Details */}
-              <div className="bg-black/60 rounded-2xl p-8 border border-amber-500/30 backdrop-blur-sm">
+              <div className="bg-amber-50 rounded-2xl p-8 border border-amber-200">
                 <div className="text-center space-y-4">
                   <div className="text-7xl">{activeChannelData.icon}</div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-white">{activeChannelData.label}</h3>
-                  <p className="text-amber-400 text-sm sm:text-base font-bold uppercase tracking-wide">{activeChannelData.description}</p>
-                  <p className="text-xl sm:text-3xl font-black text-amber-300 font-mono overflow-x-auto break-words">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900">{activeChannelData.label}</h3>
+                  <p className="text-amber-700 text-sm sm:text-base font-bold uppercase tracking-wide">{activeChannelData.description}</p>
+                  <p className="text-xl sm:text-3xl font-black text-amber-700 font-mono overflow-x-auto break-words">
                     {activeChannelData.value}
                   </p>
                 </div>
               </div>
 
               {/* Messages by Channel */}
-              <div className="bg-black/40 rounded-2xl p-8 border border-amber-500/20 backdrop-blur-sm">
-                <div className="space-y-4 text-gray-300 text-base text-center">
+              <div className="bg-white rounded-2xl p-8 border border-amber-200">
+                <div className="space-y-4 text-gray-700 text-base text-center">
                   {activeChannelData.id === 'whatsapp' && (
                     <>
                       <p className="font-semibold">✓ Quick responses to inquiries</p>
@@ -142,23 +142,23 @@ export function ContactSection() {
 
         {/* Additional Info - Centered */}
         <div className="grid md:grid-cols-2 gap-8 mt-16 text-center">
-          <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30 bg-amber-500/5">
+          <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-200 bg-amber-50">
             <div className="text-4xl">📝</div>
-            <h4 className="text-white font-black text-lg">Fill the Form Below</h4>
-            <p className="text-gray-400">Quick inquiry form sent to us</p>
+            <h4 className="text-gray-900 font-black text-lg">Fill the Form Below</h4>
+            <p className="text-gray-700">Quick inquiry form sent to us</p>
           </div>
-          <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-500/30">
+          <div className="space-y-3 p-6 rounded-2xl border-2 border-amber-200 bg-white">
             <div className="text-4xl">⚡</div>
-            <h4 className="text-white font-black text-lg">Quick Response</h4>
-            <p className="text-gray-400">We reply within 24 hours</p>
+            <h4 className="text-gray-900 font-black text-lg">Quick Response</h4>
+            <p className="text-gray-700">We reply within 24 hours</p>
           </div>
         </div>
 
         {/* Contact Form - Always Visible */}
-        <div className="mt-16 bg-gradient-to-br from-gray-900/50 to-gray-950/50 rounded-2xl p-8 border border-amber-500/20">
+        <div className="mt-16 bg-white rounded-2xl p-8 border border-amber-200 shadow-lg shadow-amber-100/60">
             <div className="mb-8">
-              <h3 className="text-2xl font-black text-white mb-2">Tell us about yourself</h3>
-              <p className="text-gray-400">Fill in the details and we&apos;ll get back to you shortly</p>
+            <h3 className="text-2xl font-black text-gray-900 mb-2">Tell us about yourself</h3>
+            <p className="text-gray-700">Fill in the details and we&apos;ll get back to you shortly</p>
             </div>
 
             <form
@@ -205,51 +205,51 @@ export function ContactSection() {
             >
               {/* Student Name */}
               <div>
-                <label className="block text-sm font-bold text-amber-400 mb-2">Student Name *</label>
+                <label className="block text-sm font-bold text-amber-700 mb-2">Student Name *</label>
                 <input
                   type="text"
                   required
                   value={formData.studentName}
                   onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
-                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  className="w-full bg-white border border-amber-200 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-500"
                   placeholder="Enter student&apos;s name"
                 />
               </div>
 
               {/* Contact Number */}
               <div>
-                <label className="block text-sm font-bold text-amber-400 mb-2">Contact Number *</label>
+                <label className="block text-sm font-bold text-amber-700 mb-2">Contact Number *</label>
                 <input
                   type="tel"
                   required
                   value={formData.contactNumber}
                   onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
-                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  className="w-full bg-white border border-amber-200 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-500"
                   placeholder="+65 XXXX XXXX"
                 />
               </div>
 
               {/* Contact Representative */}
               <div>
-                <label className="block text-sm font-bold text-amber-400 mb-2">Contact Representative (Parent/Guardian) *</label>
+                <label className="block text-sm font-bold text-amber-700 mb-2">Contact Representative (Parent/Guardian) *</label>
                 <input
                   type="text"
                   required
                   value={formData.contactRepresentative}
                   onChange={(e) => setFormData({ ...formData, contactRepresentative: e.target.value })}
-                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  className="w-full bg-white border border-amber-200 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-500"
                   placeholder="Parent/Guardian name"
                 />
               </div>
 
               {/* Age Group */}
               <div>
-                <label className="block text-sm font-bold text-amber-400 mb-2">Age Group *</label>
+                <label className="block text-sm font-bold text-amber-700 mb-2">Age Group *</label>
                 <select
                   required
                   value={formData.ageGroup}
                   onChange={(e) => setFormData({ ...formData, ageGroup: e.target.value })}
-                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-amber-500"
+                  className="w-full bg-white border border-amber-200 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-amber-500"
                 >
                   <option value="">Select age group</option>
                   <option value="4-8">4-8 years</option>
@@ -261,12 +261,12 @@ export function ContactSection() {
 
               {/* Current ELO */}
               <div>
-                <label className="block text-sm font-bold text-amber-400 mb-2">Current ELO (Online)</label>
+                <label className="block text-sm font-bold text-amber-700 mb-2">Current ELO (Online)</label>
                 <input
                   type="text"
                   value={formData.elo}
                   onChange={(e) => setFormData({ ...formData, elo: e.target.value })}
-                  className="w-full bg-black/50 border border-amber-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
+                  className="w-full bg-white border border-amber-200 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-amber-500"
                   placeholder="e.g., 1200 (optional)"
                 />
               </div>

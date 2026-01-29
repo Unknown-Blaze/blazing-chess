@@ -31,8 +31,8 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-black/95 backdrop-blur-md border-b border-amber-500/20 shadow-lg'
-          : 'bg-gradient-to-b from-black via-black/80 to-transparent'
+          ? 'bg-white/95 backdrop-blur-md border-b border-amber-200 shadow-lg'
+          : 'bg-gradient-to-b from-amber-50/80 via-white/60 to-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,10 +64,10 @@ export function Navbar() {
                 </svg>
               </div>
               <div className="text-left">
-                <div className="text-lg font-black text-white tracking-tight leading-none">
+                <div className="text-lg font-black text-gray-900 tracking-tight leading-none">
                   {BRAND.name}
                 </div>
-                <div className="text-xs text-amber-400 font-bold tracking-widest uppercase">
+                <div className="text-xs text-amber-600 font-bold tracking-widest uppercase">
                   {BRAND.tagline}
                 </div>
               </div>
@@ -82,8 +82,8 @@ export function Navbar() {
                 href={item.href}
                 className={`px-5 py-2 text-sm font-bold transition-all duration-300 relative group uppercase tracking-wide ${
                   pathname === item.href
-                    ? 'text-amber-400'
-                    : 'text-gray-300 hover:text-amber-400'
+                    ? 'text-amber-600'
+                    : 'text-gray-700 hover:text-amber-600'
                 }`}
               >
                 {item.label}
@@ -98,7 +98,7 @@ export function Navbar() {
 
           {/* Mobile Navigation Menu */}
           {isMobileMenuOpen && (
-            <div className="absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-amber-500/20 md:hidden z-40">
+            <div className="absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-amber-200 md:hidden z-40">
               <div className="px-4 py-4 space-y-3">
                 {navItems.map((item) => (
                   <Link
@@ -108,7 +108,7 @@ export function Navbar() {
                     className={`block px-4 py-2 rounded-lg font-bold transition-all duration-300 uppercase tracking-wide ${
                       pathname === item.href
                         ? 'bg-amber-500 text-black'
-                        : 'text-gray-300 hover:bg-amber-500/10 hover:text-amber-400'
+                        : 'text-gray-700 hover:bg-amber-500/10 hover:text-amber-600'
                     }`}
                   >
                     {item.label}
@@ -132,7 +132,7 @@ export function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 transition-colors text-amber-400"
+              className="md:hidden p-2 rounded-lg bg-amber-200/60 hover:bg-amber-200 transition-colors text-amber-700"
             >
               {isMobileMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
