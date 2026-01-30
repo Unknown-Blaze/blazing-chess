@@ -40,7 +40,7 @@ export default function ProgramsPage() {
                 className="bg-white border-amber-200 hover:border-amber-300 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-200/40 hover:-translate-y-3 group flex flex-col h-full"
               >
                 <CardHeader className="space-y-3 sm:space-y-4">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-4xl sm:text-5xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     {offering.icon}
                   </div>
                   <div>

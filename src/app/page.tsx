@@ -46,16 +46,16 @@ export default function HomePage() {
 
           <div className="space-y-4 sm:space-y-6">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-tight tracking-tighter px-2">
-              <span className="block mb-2 sm:mb-3 text-gray-900">Master</span>
+              <span className="block mb-2 sm:mb-3 text-gray-900">Build Your</span>
               <span className="block bg-gradient-to-r from-amber-400 via-orange-500 to-orange-600 bg-clip-text text-transparent animate-pulse">
-                The Game
+                Chess Mastery
               </span>
             </h1>
             <p className="text-base sm:text-lg md:text-2xl lg:text-3xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light px-2">
-              Elevate your chess strategy with a Singapore team that knows the local school system and competitive scene. Personal, patient coaching for all levels and all ages.
+              From tactical brilliance to endgame precision. Singapore-based FIDE-rated coaching for tournament players and rising talents. All ages, all levels.
             </p>
             <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
-              Founded in Singapore.
+              MoE-Certified Coaches • Tournament-Ready Training
             </p>
           </div>
 
@@ -118,26 +118,26 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             <div className="bg-white rounded-2xl p-8 border border-amber-200 hover:border-amber-300 transition-all duration-300 hover:shadow-lg hover:shadow-amber-200/40">
-              <div className="text-5xl mb-4">🧠</div>
-              <h3 className="text-2xl font-bold text-amber-800 mb-4">Strategic Thinking</h3>
+              <div className="text-5xl mb-4">♞</div>
+              <h3 className="text-2xl font-bold text-amber-800 mb-4">Opening Theory</h3>
               <p className="text-gray-700 leading-relaxed">
-                Chess teaches players to think ahead, analyze consequences, and make smart decisions. These critical thinking skills apply directly to math, science, and problem-solving in everyday life.
+                Master popular openings like the Sicilian, Ruy Lopez, and French Defence. Learn opening principles—control the center, develop quickly, king safety—and why they matter in modern chess.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border border-orange-200 hover:border-orange-300 transition-all duration-300 hover:shadow-lg hover:shadow-orange-200/40">
-              <div className="text-5xl mb-4">💪</div>
-              <h3 className="text-2xl font-bold text-orange-800 mb-4">Character Building</h3>
+              <div className="text-5xl mb-4">⚔️</div>
+              <h3 className="text-2xl font-bold text-orange-800 mb-4">Tactical Mastery</h3>
               <p className="text-gray-700 leading-relaxed">
-                Winning and losing teach resilience, humility, and perseverance. Players develop the mental toughness to handle challenges, bounce back from setbacks, and keep improving.
+                Intensive tactical training covering pins, forks, skewers, discovered attacks, and sacrifices. Daily puzzle training sharpens calculation speed and tactical vision.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border border-red-200 hover:border-red-300 transition-all duration-300 hover:shadow-lg hover:shadow-red-200/40">
-              <div className="text-5xl mb-4">⚡</div>
-              <h3 className="text-2xl font-bold text-red-800 mb-4">Focus & Discipline</h3>
+              <div className="text-5xl mb-4">♟️</div>
+              <h3 className="text-2xl font-bold text-red-800 mb-4">Endgame Technique</h3>
               <p className="text-gray-700 leading-relaxed">
-                Chess demands concentration and patience. Playing regularly builds the ability to focus deeply, block out distractions, and stay disciplined in pursuit of goals.
+                Essential endgames—King & Pawn, Rook, Minor pieces. Strategic thinking in simplified positions. Win your games in the final phase with precision and pawn structure mastery.
               </p>
             </div>
           </div>
@@ -155,23 +155,23 @@ export default function HomePage() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black">
               Why Choose <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Blazing Chess</span>
             </h2>
-            <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto font-light">We&apos;re not just any chess academy. Here&apos;s what sets us apart.</p>
+            <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto font-light">Competitive tournament coaching with a focus on real chess development.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 sm:gap-10">
             {/* Left Column */}
             <div className="space-y-6 sm:space-y-8">
               <div className="border-l-4 border-amber-600 pl-6 py-4 bg-white/70 rounded-r-xl">
-                <h3 className="text-2xl font-bold text-amber-800 mb-2">Certified & Passionate</h3>
+                <h3 className="text-2xl font-bold text-amber-800 mb-2">FIDE-Rated Coaching</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  All coaches are 100% MoE certified, bringing professional expertise combined with genuine love for chess. We hire coaches who care about your success.
+                  Our coaches guide students through official tournament play and FIDE rating progression. We facilitate tournament debuts and support competitive development at every level.
                 </p>
               </div>
 
               <div className="border-l-4 border-orange-600 pl-6 py-4 bg-white/70 rounded-r-xl">
-                <h3 className="text-2xl font-bold text-orange-800 mb-2">Your Coach, Your Choice</h3>
+                <h3 className="text-2xl font-bold text-orange-800 mb-2">Personalized Game Analysis</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  You select the coach that fits your learning style and personality. No one-size-fits-all approach. Your comfort and progress come first.
+                  Each student gets detailed game analysis. We identify weaknesses in opening preparation, tactical blindness, and endgame handling to create targeted improvement plans.
                 </p>
               </div>
             </div>
@@ -179,16 +179,16 @@ export default function HomePage() {
             {/* Right Column */}
             <div className="space-y-6 sm:space-y-8">
               <div className="border-l-4 border-red-600 pl-6 py-4 bg-white/70 rounded-r-xl">
-                <h3 className="text-2xl font-bold text-red-800 mb-2">Flexible for Everyone</h3>
+                <h3 className="text-2xl font-bold text-red-800 mb-2">Multiple Coaching Formats</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Online, in-person, group classes, or one-on-one lessons. Weekday or weekend. From 4 years old to 80 plus. We fit around your life.
+                  Online 1-on-1, in-person sessions, school CCA programs, or group coaching. Google Meet for arrow diagrams, or board play for tactical sharpness. We adapt to your learning style.
                 </p>
               </div>
 
               <div className="border-l-4 border-yellow-500 pl-6 py-4 bg-white/70 rounded-r-xl">
-                <h3 className="text-2xl font-bold text-yellow-700 mb-2">Free Trial, Zero Pressure</h3>
+                <h3 className="text-2xl font-bold text-yellow-700 mb-2">Free Trial, Risk-Free</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Start with a risk-free trial class. Meet a coach, feel the vibe, and only commit if it&apos;s right for you. No hidden fees or long contracts.
+                  Start with a free trial lesson. Experience the coaching style, meet your potential coach, and only commit if it fits. No pressure, no long-term contracts.
                 </p>
               </div>
             </div>

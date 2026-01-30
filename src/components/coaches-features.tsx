@@ -10,28 +10,28 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 export function CoachesFeatures() {
   const features = [
     {
-      icon: '👥',
-      title: 'Choose Your Coach',
-      description: 'Meet our passionate young coaches (ages 20-26) and select the one that best fits your learning style.',
+      icon: '♟️',
+      title: 'Coach Selection',
+      description: 'Meet coaches with tournament experience. Choose based on their specialization—opening theory, tactics, endgames—and personality fit.',
       highlight: 'Personalized match',
     },
     {
-      icon: '📚',
-      title: 'Free Trial Class',
-      description: 'Try your first class for free. Experience our teaching style and see if it\'s the right fit for you.',
-      highlight: 'Zero commitment',
+      icon: '⏱️',
+      title: 'Free Trial Lesson',
+      description: 'Book your first lesson free. Get a feel for the coaching approach, curriculum style, and learning environment before committing.',
+      highlight: 'Risk-free debut',
     },
     {
-      icon: '🎯',
-      title: 'All Ages Welcome',
-      description: 'From young beginners (age 4) to adults (age 80+), we teach everyone. Chess has no age limit!',
+      icon: '♔',
+      title: 'All Levels Coached',
+      description: 'From beginner foundations (age 4) to adult competitors (age 80+). Absolute beginners to tournament-ready players—we develop every level.',
       highlight: 'Ages 4-80+',
     },
     {
       icon: '✓',
-      title: 'MoE Certified Coaches',
-      description: 'All our coaches are Ministry of Education certified, ensuring professional and quality instruction.',
-      highlight: 'Certified excellence',
+      title: 'MoE-Certified Pros',
+      description: 'All coaches hold Ministry of Education teaching certification. Professional standards, structured syllabus, proven results in tournament play.',
+      highlight: 'Official credentials',
     },
   ];
 
@@ -44,13 +44,13 @@ export function CoachesFeatures() {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-amber-200 shadow-lg shadow-amber-200/30">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why Choose{' '}
+            Meet Your{' '}
             <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">
-              Our Coaches
+              Chess Coaches
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            Learn from dedicated young professionals committed to bringing out your best
+            Passionate, MoE-certified instructors with tournament experience and the patience to grow your game
           </p>
         </div>
 
@@ -77,25 +77,25 @@ export function CoachesFeatures() {
         {/* Coach Profile Showcase */}
         <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 border border-amber-200 shadow-lg shadow-amber-100/60">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">Young, Passionate Coaches</h3>
-            <p className="text-gray-700">Aged 20-26, bringing energy and modern teaching methods</p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">Experienced Tournament Coaches</h3>
+            <p className="text-gray-700">Young professionals (20-26) with competitive chess background and proven teaching track record</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-6xl mb-4">🧠</div>
-              <h4 className="text-gray-900 font-bold mb-2">Strategic Thinkers</h4>
-              <p className="text-gray-700 text-sm">Coaches who understand modern chess strategy and can explain complex concepts simply</p>
+              <div className="text-6xl mb-4">♞</div>
+              <h4 className="text-gray-900 font-bold mb-2">Tournament Players</h4>
+              <p className="text-gray-700 text-sm">Coaches with active tournament experience and competitive ratings. They know what it takes to win at every level.</p>
             </div>
             <div className="text-center">
-              <div className="text-6xl mb-4">⚡</div>
-              <h4 className="text-gray-900 font-bold mb-2">Energetic & Patient</h4>
-              <p className="text-gray-700 text-sm">Patient instructors who adapt their teaching to each student&apos;s pace and learning style</p>
+              <div className="text-6xl mb-4">📖</div>
+              <h4 className="text-gray-900 font-bold mb-2">Structured Teaching</h4>
+              <p className="text-gray-700 text-sm">Follow proven curricula in openings, tactics, and endgames. Clear progression from beginner to competitive play.</p>
             </div>
             <div className="text-center">
-              <div className="text-6xl mb-4">🎓</div>
-              <h4 className="text-gray-900 font-bold mb-2">MoE Certified</h4>
-              <p className="text-gray-700 text-sm">Officially certified educators committed to structured learning and student development</p>
+              <div className="text-6xl mb-4">✓</div>
+              <h4 className="text-gray-900 font-bold mb-2">Certified Educators</h4>
+              <p className="text-gray-700 text-sm">All MoE certified. Professional standards, structured assessment, and accountability in student development.</p>
             </div>
           </div>
         </div>
