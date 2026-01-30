@@ -12,7 +12,7 @@ export function CoachesFeatures() {
     {
       icon: '♟️',
       title: 'Coach Selection',
-      description: 'Meet coaches with tournament experience. Choose based on their specialization—opening theory, tactics, endgames—and personality fit.',
+      description: 'Meet coaches with teaching and tournament experience. Choose based on their expertise in opening theory, tactics, endgames and personality fit.',
       highlight: 'Personalized match',
     },
     {
@@ -24,7 +24,7 @@ export function CoachesFeatures() {
     {
       icon: '♔',
       title: 'All Levels Coached',
-      description: 'From beginner foundations (age 4) to adult competitors (age 80+). Absolute beginners to tournament-ready players—we develop every level.',
+      description: 'From beginner foundations (age 4) to adult competitors (age 80+). Absolute beginners to tournament-ready players. We can develop every level.',
       highlight: 'Ages 4-80+',
     },
     {
@@ -50,7 +50,7 @@ export function CoachesFeatures() {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            Passionate, MoE-certified instructors with tournament experience and the patience to grow your game
+            Passionate, MoE-certified instructors with teaching and tournament experience and the patience to grow your game
           </p>
         </div>
 

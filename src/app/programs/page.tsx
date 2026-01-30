@@ -75,7 +75,7 @@ export default function ProgramsPage() {
                         {offering.price}
                       </div>
                       <div className="text-gray-600 text-xs font-semibold mt-1 uppercase tracking-wide">
-                        Flexible rates in Singapore
+                        Flexible rates in Singapore • Group rates lower
                       </div>
                     </div>
                     <Button 

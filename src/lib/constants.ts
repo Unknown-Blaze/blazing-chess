@@ -42,7 +42,7 @@ export const OFFERINGS: OfferingCard[] = [
       'Tournament preparation (FIDE-rated)',
       'All ages & levels (4-80+)',
     ],
-    price: 'S$55-65/hour',
+    price: 'S$40-60/hour',
   },
   {
     id: '3',
@@ -58,7 +58,7 @@ export const OFFERINGS: OfferingCard[] = [
       'Tournament debut preparation',
       'All ages & levels (4-80+)',
     ],
-    price: 'S$90-110/session (1.5 hrs)',
+    price: 'S$50-70/hour',
   },
   {
     id: '1',
@@ -72,9 +72,9 @@ export const OFFERINGS: OfferingCard[] = [
       'Middle-game planning & strategic thinking',
       'Tournament coaching & match preparation',
       'FIDE rating facilitation',
-      'Flexible group scheduling (8-15 students)',
+      'Flexible group scheduling (min. 4 students)',
     ],
-    price: 'S$40/student/lesson',
+    price: 'S$25-35/student',
   },
 ];
 
