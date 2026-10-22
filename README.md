@@ -1,5 +1,14 @@
 # Blazing Chess Academy 🔥♟️ 
 
+Website for Blazing Chess Academy, a Singapore chess coaching academy, built with Next.js 14, TypeScript, Tailwind CSS and shadcn/ui, with a validated registration form.
+
+[![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Live demo](https://img.shields.io/badge/Live%20demo-blazing--chess.vercel.app-000000?style=flat-square&logo=vercel&logoColor=white)](https://blazing-chess.vercel.app)
+
+<img src="docs/screenshot.png" alt="Blazing Chess Academy landing page" width="100%">
+
 **Ignite Your Potential**
 
 A modern, beautiful chess academy website built with Next.js 14, featuring dark mode aesthetics with Black/Gold/Fire Orange branding.
