@@ -13,7 +13,11 @@ Website for Blazing Chess Academy, a Singapore chess coaching academy, built wit
 
 A modern, beautiful chess academy website built with Next.js 14, featuring dark mode aesthetics with Black/Gold/Fire Orange branding.
 
-## 🎨 Brand Identity
+## What it does
+
+The site presents the academy, its coaches and its programmes, and takes inquiries. A parent fills in the contact form; the site checks the fields and forwards the inquiry to the academy's Telegram chat.
+
+### Brand identity
 
 - **Name:** Blazing Chess Academy
 - **Tagline:** Ignite your potential
@@ -21,36 +25,9 @@ A modern, beautiful chess academy website built with Next.js 14, featuring dark 
 - **Colors:** Black / Gold / Fire Orange
 - **Theme:** Dark-mode first design
 
-## 🚀 Tech Stack
+### Features
 
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS + Shadcn/UI
-- **Forms:** React Hook Form + Zod validation
-- **Database:** Supabase (calls mocked for now)
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                    # Next.js 14 App Router
-│   ├── layout.tsx          # Root layout
-│   ├── page.tsx            # Landing page
-│   └── globals.css         # Global styles
-├── components/             # React components
-│   ├── ui/                 # Shadcn/UI components
-│   └── registration-modal.tsx
-├── lib/                    # Utilities & config
-│   ├── types.ts            # TypeScript interfaces
-│   ├── validations.ts      # Zod schemas
-│   ├── utils.ts            # Utility functions
-│   └── constants.ts        # App constants
-└── hooks/                  # Custom React hooks
-```
-
-## 🎯 Features
-
-### Landing Page (app/page.tsx)
+#### Landing Page (app/page.tsx)
 
 ✅ **Hero Section**
 - Headline: "Master the Board, Ignite the Mind"
@@ -69,7 +46,7 @@ Three program cards:
 2. **Private Mentorship** - One-on-one elite coaching
 3. **Online Blitz Tournaments** - Fast-paced competitions
 
-### Registration Modal (components/registration-modal.tsx)
+#### Registration Modal (components/registration-modal.tsx)
 
 ✅ **Beautiful Dark-Themed Dialog**
 - Shadcn/UI Dialog component
@@ -89,7 +66,7 @@ Three program cards:
 - Must start with 3, 6, 8, or 9
 - Real-time validation feedback
 
-### Type Definitions (lib/types.ts)
+#### Type Definitions (lib/types.ts)
 
 ✅ **Core Interfaces**
 ```typescript
@@ -101,7 +78,130 @@ Three program cards:
 - Tournament
 ```
 
-## 🎨 Design System
+> The registration modal is built but not mounted on any page yet; its submit is mocked. Live inquiries go through the contact form described under Architecture.
+
+### Course types
+
+- **School CCA** - Group coaching for schools
+- **Private Mentorship** - 1-on-1 elite training
+- **Online Blitz** - Fast-paced tournaments
+- **Group Lessons** - Small group sessions
+
+## Architecture
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/architecture-dark.svg">
+  <img src="docs/architecture-light.svg" alt="Architecture: a visitor's browser loads Next.js 14 App Router pages on Vercel; components read content from lib/constants.ts; the contact form posts to /api/contact, which forwards the inquiry to the Telegram Bot API and the academy chat; the registration modal is present but not mounted" width="100%">
+</picture>
+
+- **Pages** ([src/app](src/app)). Four App Router routes: `/` (landing), `/programs`, `/coaches` and `/contact`, deployed on Vercel.
+- **Components** ([src/components](src/components)). Navbar, coaches features and the contact section, built from shadcn/ui primitives in `src/components/ui`.
+- **Content** ([src/lib/constants.ts](src/lib/constants.ts)). Brand, offerings and pricing live in one file; [src/lib/validations.ts](src/lib/validations.ts) holds the Zod schemas.
+- **Inquiries** ([src/app/api/contact/route.ts](src/app/api/contact/route.ts)). The contact form posts JSON to `POST /api/contact`. The route handler checks the required fields and the Telegram settings, formats the message and calls the Telegram Bot API `sendMessage` for the chat in `TELEGRAM_CHAT_ID`.
+- **No database yet.** Nothing is stored server-side; Supabase is planned (see Roadmap).
+
+## Tech stack
+
+| Area | Tools |
+|---|---|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS + shadcn/ui (Radix UI), lucide-react icons |
+| Forms | React Hook Form + Zod validation |
+| Inquiries | Next.js route handler → Telegram Bot API |
+| Database | Supabase (calls mocked for now) |
+| Hosting and CI | Vercel; GitHub Actions runs typecheck, lint and build |
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18+ (CI uses Node 20)
+- npm/pnpm/yarn
+
+### Installation
+
+1. **Install Dependencies**
+```bash
+npm install
+```
+
+2. **Set environment variables** (for the contact form). Copy [.env.example](.env.example) to `.env.local` and fill in:
+
+| Variable | Used by |
+|---|---|
+| `TELEGRAM_BOT_TOKEN` | `src/app/api/contact/route.ts`: bot that sends the inquiry |
+| `TELEGRAM_CHAT_ID` | `src/app/api/contact/route.ts`: chat that receives it |
+
+`.env.example` also lists `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` and `SMTP_*` for planned features; the current code does not read them. Without the Telegram variables the site runs, and the contact route answers with a configuration error.
+
+3. **Run Development Server**
+```bash
+npm run dev
+```
+
+4. **Open Browser**
+Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Building for production
+
+```bash
+npm run build
+npm start
+```
+
+`npm run lint` runs ESLint. More detail is in [SETUP.md](SETUP.md); design specifications are in [DESIGN.md](DESIGN.md).
+
+### Shadcn/UI components
+
+The following Shadcn/UI components are used. They are already committed under `src/components/ui`; these commands are only needed to regenerate them:
+
+```bash
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add dialog
+npx shadcn-ui@latest add input
+npx shadcn-ui@latest add label
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add textarea
+```
+
+### Database integration (future)
+
+Currently, the registration form uses **mocked API calls**. To connect to Supabase:
+
+1. Create a Supabase project
+2. Add environment variables `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+3. Implement Supabase client in `lib/supabase/client.ts`
+4. Replace mock calls in registration modal
+
+## Project structure
+
+```text
+src/
+├── app/                        # Next.js 14 App Router
+│   ├── layout.tsx              # Root layout
+│   ├── page.tsx                # Landing page
+│   ├── programs/page.tsx       # Programmes
+│   ├── coaches/page.tsx        # Coaches
+│   ├── contact/page.tsx        # Contact
+│   ├── api/contact/route.ts    # Contact form → Telegram
+│   └── globals.css             # Global styles
+├── components/                 # React components
+│   ├── ui/                     # Shadcn/UI components
+│   ├── navbar.tsx
+│   ├── coaches-features.tsx
+│   ├── contact-section.tsx
+│   └── registration-modal.tsx  # Not mounted yet
+└── lib/                        # Utilities & config
+    ├── types.ts                # TypeScript interfaces
+    ├── validations.ts          # Zod schemas
+    ├── utils.ts                # Utility functions
+    └── constants.ts            # App constants
+public/                         # Photos and icon
+docs/                           # README images
+```
+
+## Design system
 
 ### Colors (Tailwind Config)
 - **Primary:** Amber-500 (#F59E0B)
@@ -122,75 +222,14 @@ Three program cards:
 - **Inputs:** Dark background with amber focus rings
 - **Modals:** Full-screen overlay with centered content
 
-## 🛠️ Setup Instructions
-
-### Prerequisites
-- Node.js 18+ 
-- npm/pnpm/yarn
-
-### Installation
-
-1. **Install Dependencies**
-```bash
-npm install
-```
-
-2. **Run Development Server**
-```bash
-npm run dev
-```
-
-3. **Open Browser**
-Navigate to [http://localhost:3000](http://localhost:3000)
-
-### Building for Production
-
-```bash
-npm run build
-npm start
-```
-
-## 📦 Required Shadcn/UI Components
-
-The following Shadcn/UI components need to be installed:
-
-```bash
-npx shadcn-ui@latest add button
-npx shadcn-ui@latest add dialog
-npx shadcn-ui@latest add input
-npx shadcn-ui@latest add label
-npx shadcn-ui@latest add card
-npx shadcn-ui@latest add textarea
-```
-
-## 🔌 Database Integration (Future)
-
-Currently, the registration form uses **mocked API calls**. To connect to Supabase:
-
-1. Create a Supabase project
-2. Add environment variables:
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
-```
-3. Implement Supabase client in `lib/supabase/client.ts`
-4. Replace mock calls in registration modal
-
-## 🎓 Course Types
-
-- **School CCA** - Group coaching for schools
-- **Private Mentorship** - 1-on-1 elite training
-- **Online Blitz** - Fast-paced tournaments
-- **Group Lessons** - Small group sessions
-
-## 📱 Responsive Design
+### Responsive design
 
 - **Mobile-first** approach
 - Breakpoints: sm (640px), md (768px), lg (1024px)
 - Optimized touch targets for mobile
 - Responsive typography and spacing
 
-## ♿ Accessibility
+### Accessibility
 
 - Semantic HTML structure
 - ARIA labels where needed
@@ -198,7 +237,11 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
 - Focus visible states
 - High contrast color scheme
 
-## 🚧 Roadmap
+## Screenshots
+
+The landing page is shown at the top of this README; the live site is at [blazing-chess.vercel.app](https://blazing-chess.vercel.app).
+
+## Roadmap
 
 - [ ] Complete Supabase integration
 - [ ] Add authentication system
@@ -210,16 +253,16 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
 - [ ] Email notifications
 - [ ] Analytics integration
 
-## 📄 License
+## Contributing
 
-Private - Blazing Chess Academy
+For inquiries, contact the development team.
 
-## 🤝 Contributing
-
-This is a private project. For inquiries, contact the development team.
-
----
+## Credits
 
 **Built with 🔥 by Blazing Chess Academy Development Team**
 
 *Master the Board, Ignite the Mind* ♟️✨
+
+## Licence
+
+[MIT](LICENSE) © 2026 Rudra Prasadh Ganesh
